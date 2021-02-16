@@ -21,6 +21,7 @@ module Egn
         year = "20#{year}"
       end
 
+      year = 2000 if year.to_i == 200
       [year.to_i, month]
     end
 
