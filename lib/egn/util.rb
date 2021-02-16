@@ -10,6 +10,8 @@ module Egn
     # * For people born in 1800..1899 the month is increased by 20 (e.g January is 21)
     # * For people born in 2000..2099 the month is increased by 40 (e.g December is 52)
     def self.determine_date(year, month)
+      year = year.to_s.rjust(2, '0')
+      
       case month
       when (1..12)
         year = "19#{year}"
@@ -21,7 +23,6 @@ module Egn
         year = "20#{year}"
       end
 
-      year = 2000 if year.to_i == 200
       [year.to_i, month]
     end
 
